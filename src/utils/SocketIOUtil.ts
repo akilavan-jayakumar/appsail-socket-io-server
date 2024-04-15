@@ -4,7 +4,7 @@ import { RemoteSocket, Server, Socket } from 'socket.io';
 
 import AjvUtil from './AjvUtil';
 import Logger from './LoggerUtil';
-import EnvConstants from '../constants/EnvConstants';
+import AuthUtil from './AuthUtil';
 import SocketIOConstants from '../constants/SocketIOConstants';
 
 import { SocketData } from '../types';
@@ -72,12 +72,12 @@ export default class SocketIOUtil {
 
 			this.server.use(async (socket, next) => {
 				try {
-					const auth_token = socket.handshake.auth.token;
+					const token = socket.handshake.auth.token;
 					const name = socket.handshake.query.name as string;
 					const last_read_message = socket.handshake.query
 						.last_read_message as string;
 
-					if (auth_token !== EnvConstants.CODELIB_SECRET_KEY) {
+					if (!AuthUtil.isValidToken(token)) {
 						throw new Error(
 							"You don't have permission to perform this opertaion. Kindly contact your administrator for more details."
 						);

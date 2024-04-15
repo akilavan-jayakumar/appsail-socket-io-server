@@ -1,7 +1,7 @@
 import ServiceConnectorUtil from './ServiceConnectorUtil';
 import RequestMethodEnum from '../enums/RequestMethodEnum';
 import ServiceConnectionHandler from '../handlers/ServiceConnectionHandler';
-import ServiceConnectionConstants from '../constants/ServiceConnectionConstants';
+import ServiceConnectionConstants from '../constants/MessageServiceConnectionConstants';
 
 import { Message, PageDetails } from '../types';
 

@@ -2,7 +2,7 @@ export default class ServiceConnectionConstants {
 	public static MAX_RECORDS_PER_OPERATION = 200;
 	public static Endpoints = {
 		MESSAGES: '/messages',
-		ROOT_PATH: '/server/service'
+		ROOT_PATH: '/server/message_service'
 	};
 
 	public static Headers = {

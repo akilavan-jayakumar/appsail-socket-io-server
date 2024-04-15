@@ -1,5 +1,5 @@
 import EnvConstants from '../constants/EnvConstants';
-import ServiceConnectionConstants from '../constants/ServiceConnectionConstants';
+import ServiceConnectionConstants from '../constants/MessageServiceConnectionConstants';
 
 export default class ServiceConnectorUtil {
 	public static getBaseUrl(): string {

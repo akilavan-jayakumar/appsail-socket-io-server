@@ -5,7 +5,7 @@ import CommonUtil from '../utils/CommonUtil';
 import MessageUtil from '../utils/MessageUtil';
 import SocketIOUtil from '../utils/SocketIOUtil';
 import SocketIOConstants from '../constants/SocketIOConstants';
-import ServiceConnectionConstants from '../constants/ServiceConnectionConstants';
+import ServiceConnectionConstants from '../constants/MessageServiceConnectionConstants';
 
 import { Message } from '../types';
 
@@ -49,7 +49,7 @@ export default class ReadMessagesJob {
 							const { name, created_time, last_read_message } = socket.data;
 							const eventMessages = messages.filter((obj) => {
 								if (last_read_message) {
-									return obj.id > last_read_message;
+									return parseInt(obj.id) > parseInt(last_read_message);
 								}
 								return moment(obj.created_time, 'YYYY-MM-DD HH:mm:ss').isAfter(
 									created_time

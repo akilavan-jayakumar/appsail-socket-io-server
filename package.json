@@ -1,5 +1,5 @@
 {
-	"name": "zoho_crm_bridge",
+	"name": "zoho-crm-bridge",
 	"version": "1.0.0",
 	"main": "index.js",
 	"author": "solutions@zohocatalyst.com",
